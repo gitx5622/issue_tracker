@@ -1,4 +1,4 @@
-import { GET_ISSUES_ERROR, GET_ISSUES_SUCCESS, CREATE_ISSUES_SUCCESS, CREATE_ISSUES_ERROR } from "../actionTypes"
+import { BEFORE_STATE, GET_ISSUES_ERROR, GET_ISSUES_SUCCESS, CREATE_ISSUES_SUCCESS, CREATE_ISSUES_ERROR } from "../actionTypes"
 
 export const initState = {
     issues: [],
@@ -50,4 +50,4 @@ const issueReducer = (state = initState, action) => {
     }
 }
 
-export default authReducer
+export default issueReducer

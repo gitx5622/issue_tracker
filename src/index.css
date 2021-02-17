@@ -7,6 +7,9 @@ a {
 .logo{
   color: white;
 }
+.black {
+  color: #000000;
+}
 
 /*
 =============== 
@@ -121,4 +124,12 @@ Navbar
   border-top-right-radius: unset;
   border-bottom-right-radius: unset; 
   font-size: 25px;
+}
+
+.logincard {
+  margin-top: 100px;
+}
+
+.githubicon {
+  font-size: 30px;
 }

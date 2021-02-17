@@ -3,6 +3,7 @@ import {InputGroup,InputGroupText,InputGroupAddon, Card, CardBody, CardTitle, Ca
 import Sidebar from './sidebar';
 
 const Main = () => {
+    
     return ( 
         <div className="container-fluid">
         <Row>
