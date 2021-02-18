@@ -1,55 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {InputGroup,InputGroupText,InputGroupAddon, Card, CardBody, CardTitle, CardHeader, Col, Row } from "shards-react";
 import Sidebar from './sidebar';
-import { useLocation } from "react-router-dom";
-import queryString from 'query-string';
-import { Redirect } from "react-router-dom";
-import { LOGIN_SUCCESS } from '../store/auth/actionTypes';
-import { useDispatch, useSelector } from 'react-redux';
 
-const Main = () => {
-  const location = useLocation();
-  const [data, setData] = useState({ errorMessage: "", isLoading: false });
-  const authState = useSelector(state => state.Auth);
-  const dispatch = useDispatch();
 
-  let redirect_uri = `https://issuetracker.toprated.co.ke`;
-
-  useEffect(() => {
-      const value = queryString.parse(location.search); // result: '?query=abc'
-      const code = value.code;
-      localStorage.setItem('code', code);
-      const hasCode = localStorage.getItem('code');
-      console.log(hasCode);
-  
-      // If Github API returns the code parameter
-      if (hasCode) {
-        const proxy_url = `https://github.com/login/oauth/access_token?client_id=69e165413c11b10cd90f&client_secret=f3a239632ad3d8156d82317ba3d4c440890cbc15&code=${hasCode}`
-  
-        // Use code parameter and other parameters to make POST request to proxy_server
-        fetch(proxy_url, {
-          mode: "no-cors",
-          method: "POST",
-        })
-          .then(response => response.json())
-          .then(data => {
-          console.log(data);
-          dispatch({type: LOGIN_SUCCESS, payload: { user: data, isLoggedIn: true }});
-          })
-          .catch(error => {
-            setData({
-              isLoading: false,
-              errorMessage: "Sorry! Login failed"
-            });
-          });
-      }
-   }, [location, redirect_uri]);
-  
-    if (authState.isLoggedIn) {
-      return <Redirect to="/" />;
-    }
-
-  
+const Main = () => {  
     return ( 
         <div className="container-fluid">
         <Row>

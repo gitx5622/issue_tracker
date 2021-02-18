@@ -9,9 +9,9 @@ const App = () => {
     <div className="App">
       <Router history={history}>
       <Switch>
-        <Route path={["/login", "/"]}>
-            <Route path="/login" component={Login}/>
-            <Route exact path="/" component={Home}/>
+        <Route path={["/", "/"]}>
+            <Route exact path="/" component={Login}/>
+            <Route exact path="/home" component={Home}/>
             </Route>
         </Switch>
       </Router>
