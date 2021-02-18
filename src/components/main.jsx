@@ -28,6 +28,7 @@ const Main = () => {
   
         // Use code parameter and other parameters to make POST request to proxy_server
         fetch(proxy_url, {
+          mode: "no-cors",
           method: "POST",
         })
           .then(response => response.json())
