@@ -1,58 +1,32 @@
-import { LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT_SUCCESS, BEFORE_STATE } from '../actionTypes/index'
-import isEmpty from 'lodash/isEmpty';
+import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionTypes";
 
-export const initState = {
-    isAuthenticated: false,
-    currentUser: {},
-    isLoading: false,
-    isLoadingAvatar: false,
-    isUpdatingUser: false,
-    authError: null,
-    authSuccess: null
-}
+export const initialState = {
+  isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")) || false,
+  user: JSON.parse(localStorage.getItem("user")) || null,
+};
 
-
-const authReducer = (state = initState, action) => {
-    switch(action.type) {
-
-        // This is the state to set when the button is click and we are waiting for response
-        case BEFORE_STATE:
-            return {
-                ...state,
-                authError: null,
-                isLoading: true,
-            }
-        case LOGIN_SUCCESS:
-            return {
-                ...state,
-                isLoading: false,
-                currentUser: action.payload,
-                isAuthenticated: !isEmpty(action.payload),
-                loginError: null,
-                signupError: null,
-
-            }
-        case LOGIN_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                loginError: action.payload,
-                signupError: null,
-
-            }
-        case LOGOUT_SUCCESS:
-            return {
-                ...state,
-                isAuthenticated: false,
-                currentUser: {},
-                logoutError: null,
-                isLoading: false,
-                signupError: null,
-                loginError: null,
-            }
-        default:
-            return state;
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LOGIN_SUCCESS: {
+      localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn))
+      localStorage.setItem("user", JSON.stringify(action.payload.user))
+      return {
+        ...state,
+        isLoggedIn: action.payload.isLoggedIn,
+        user: action.payload.user
+      };
     }
-}
+    case LOGOUT_SUCCESS: {
+      localStorage.clear()
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: null
+      };
+    }
+    default:
+      return state;
+  }
+};
 
-export default authReducer
+export default authReducer;
