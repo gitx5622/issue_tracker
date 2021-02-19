@@ -1,11 +1,18 @@
-import { BEFORE_STATE, GET_ISSUES_ERROR, GET_ISSUES_SUCCESS, CREATE_ISSUES_SUCCESS, 
-    CREATE_ISSUES_ERROR, GET_CREATED_ISSUES_SUCCESS, GET_CREATED_ISSUES_ERROR, 
-    GET_REPO_ISSUE_ERROR, GET_REPO_ISSUE_SUCCESS } from "../actionTypes"
+import { BEFORE_STATE, GET_ISSUES_ERROR, GET_ISSUES_SUCCESS,GET_CREATED_ISSUES_SUCCESS, 
+    GET_CREATED_ISSUES_ERROR, GET_TOPRATED_REPO_ISSUE_SUCCESS, GET_TOPRATED_REPO_ISSUE_ERROR, 
+    GET_LIKEE_REPO_ISSUE_SUCCESS, GET_LIKEE_REPO_ISSUE_ERROR, GET_ESHOP_REPO_ISSUE_SUCCESS, 
+    GET_ESHOP_REPO_ISSUE_ERROR, GET_ADVANCED_REPO_ISSUE_SUCCESS, GET_ADVANCED_REPO_ISSUE_ERROR, 
+    CREATE_TOPRATED_ISSUE_SUCCESS, CREATE_TOPRATED_ISSUE_ERROR, CREATE_LIKEE_ISSUE_SUCCESS, 
+    CREATE_LIKEE_ISSUE_ERROR, CREATE_ESHOP_ISSUE_SUCCESS, CREATE_ESHOP_ISSUE_ERROR, 
+    CREATE_ADVANCED_ISSUE_SUCCESS, CREATE_ADVANCED_ISSUE_ERROR } from "../actionTypes"
 
 export const initState = {
     issues: [],
     createdIssues: [],
-    repoIssues: [],
+    topratedrepoIssues: [],
+    likeerepoIssues: [],
+    eshoprepoIssues: [],
+    advancedrepoIssues: [],
     repos: {},
     isLoading: false,
     issueError: null,
@@ -48,32 +55,109 @@ const issueReducer = (state = initState, action) => {
                 isLoading: false,
                 issueError: action.payload,
             }
-        case GET_REPO_ISSUE_SUCCESS:
+        case GET_TOPRATED_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                repoIssues: action.payload,
+                topratedrepoIssues: action.payload,
                 issueError: null,
             }
-        case GET_REPO_ISSUE_ERROR:
+        case GET_TOPRATED_REPO_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
             }
-        case CREATE_ISSUES_SUCCESS:
+        case GET_LIKEE_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
+                likeerepoIssues: action.payload,
                 issueError: null,
             }
-        case CREATE_ISSUES_ERROR:
+        case GET_LIKEE_REPO_ISSUE_ERROR:
             return {
                 ...state,
-                isUpdatingUser: false,
-                currentUser: action.payload,
-                userError: null,
-                authSuccessUser: "Details Updated"
+                isLoading: false,
+                issueError: action.payload,
+            }
+        case GET_ESHOP_REPO_ISSUE_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                eshoprepoIssues: action.payload,
+                issueError: null,
+            }
+        case GET_ESHOP_REPO_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
+            }
+        case GET_ADVANCED_REPO_ISSUE_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                advancedrepoIssues: action.payload,
+                issueError: null,
+            }
+        case GET_ADVANCED_REPO_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
+            }  
+        case CREATE_TOPRATED_ISSUE_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                topratedrepoIssues: [action.payload, ...state.topratedrepoIssues],
+                issueError: null,
+            }
+        case CREATE_TOPRATED_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
+            }
+        case CREATE_LIKEE_ISSUE_SUCCESS:
+        return {
+            ...state,
+            isLoading: false,
+            likeerepoIssues: [action.payload, ...state.likeerepoIssues],
+            issueError: null,
+        }
+        case CREATE_LIKEE_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
+            }
+        case CREATE_ESHOP_ISSUE_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                eshoprepoIssues: [action.payload, ...state.eshoprepoIssues],
+                issueError: null,
+            }
+        case CREATE_ESHOP_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
+            }
+        case CREATE_ADVANCED_ISSUE_SUCCESS:
+        return {
+            ...state,
+            isLoading: false,
+            advancedrepoIssues: [action.payload, ...state.advancedrepoIssues],
+            issueError: null,
+        }
+        case CREATE_ADVANCED_ISSUE_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                issueError: action.payload,
             }
         default:
             return state;

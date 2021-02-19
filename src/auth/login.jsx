@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardBody, Row } from "shards-react";
-import NavBar from "../components/navbar";
-
-const CLIENT_ID = `69e165413c11b10cd90f`;
-const REDIRECT_URI = `http://localhost:3000`;
-
-const uri = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`;
+import { uri } from "../utils/constants";
 
 class Login extends Component {
     async componentDidMount() {

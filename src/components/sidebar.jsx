@@ -42,10 +42,10 @@ const Sidebar = () => {
         <Link to="/created_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FaRegCheckCircle/>&nbsp;&nbsp;&nbsp;Created Issues</ListGroupItem></Link>
         <Link to="/mention_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FaListUl/>&nbsp;&nbsp;&nbsp;Mentioned Issues</ListGroupItem></Link>
         <Link to="/assigned_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><GrAdd/>&nbsp;&nbsp;&nbsp;Assigned Issues</ListGroupItem></Link>
-        <Link to="/repo_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FiEdit/>&nbsp;&nbsp;&nbsp;Topratedprofessors Issues</ListGroupItem></Link>
-        <Link to="/"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><AiOutlineWallet/>&nbsp;&nbsp;&nbsp;Likee Issues</ListGroupItem></Link>
-        <Link to="/"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><BiStopCircle/>&nbsp;&nbsp;&nbsp;Eshop Issues</ListGroupItem></Link>
-        <Link to="/"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FaRegCheckCircle/>&nbsp;&nbsp;&nbsp;Advanced Issues</ListGroupItem></Link>
+        <Link to="/toprated_repo_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FiEdit/>&nbsp;&nbsp;&nbsp;Topratedprofessors Issues</ListGroupItem></Link>
+        <Link to="/likee_repo_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><AiOutlineWallet/>&nbsp;&nbsp;&nbsp;Likee Issues</ListGroupItem></Link>
+        <Link to="/eshop_repo_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><BiStopCircle/>&nbsp;&nbsp;&nbsp;Eshop Issues</ListGroupItem></Link>
+        <Link to="/advanced_repo_issues"><ListGroupItem style={{color:"#000000", backgroundColor:  '#ffffff', borderTopRightRadius:"unset",borderBottomRightRadius:"unset"}}><FaRegCheckCircle/>&nbsp;&nbsp;&nbsp;Advanced Issues</ListGroupItem></Link>
         </ListGroup>
         </Card>
         </div>

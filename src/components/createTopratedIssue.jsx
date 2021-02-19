@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { createRepoIssue } from "../store/issues/actions/issueActions";
+import { createTopratedRepoIssue } from "../store/issues/actions/issueActions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import {Row, Col, Button} from 'shards-react';
@@ -16,7 +16,7 @@ import 'tinymce/plugins/image';
 import 'tinymce/plugins/table';
 
 
-const CreateRepoIssue = () => {
+const CreateTopratedIssue = () => {
   const [contentEditor, setContentEditor] = React.useState();
   const currentState = useSelector((state) => state.Issues);
 
@@ -26,7 +26,7 @@ const CreateRepoIssue = () => {
   });
   const dispatch = useDispatch();
 
-  const addRepoIssue = (credentials) => dispatch(createRepoIssue(credentials));
+  const addRepoIssue = (credentials) => dispatch(createTopratedRepoIssue(credentials));
 
   const handleChange = e => {
       setIssue({
@@ -40,7 +40,6 @@ const CreateRepoIssue = () => {
           title: issue.title,
           body: issue.body,
       });
-      <Redirect to="/created_issues"/>
   };
 
     const handleEditorChange = (content) => {
@@ -53,7 +52,8 @@ const CreateRepoIssue = () => {
   }
 
     return (
-      <div>
+      <div style={{marginTop:"10px"}}>
+        <h3>Create an Issue</h3>
           <form onSubmit={submitIssue}>
             <div className="form-group">
                 <input 
@@ -86,11 +86,9 @@ const CreateRepoIssue = () => {
               <Row>
               <Col>
               <Button
-                  outline
                   theme="success"
                   type="submit"
-                  className="btn btn-solid order-color"
-                  name="register"
+                  className="btn btn-solid"
                   disabled={
                     issue.title === ""
                   }
@@ -103,4 +101,4 @@ const CreateRepoIssue = () => {
         </div>
     );
 }
-export default CreateRepoIssue;
+export default CreateTopratedIssue;
