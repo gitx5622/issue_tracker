@@ -3,7 +3,7 @@ import axios from 'axios';
 import API_ROUTE from "../../../utils/constants";
 
 
-const token = '48cecc54136de1dff85e277395e4268ce9b0a224';
+const token = '47a0229512f1827ff5768e627d2063e9cae4c55b';
 const owner = 'gitx5622';
 const repo = 'topratedprofessors';
  

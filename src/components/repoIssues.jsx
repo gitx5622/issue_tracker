@@ -17,7 +17,7 @@ const RepoIssues = () => {
     const repoIssues = allRepoIssues.map(issue => { return (
     <div key={issue.id}>
         <ListGroup>
-            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}</strong>
+            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}</strong>{issue.labels.map(label => { return (<Tag color="cyan"> {label.name}</Tag>)})}
             <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{issue.state}</Tag></ListGroupItem>
         </ListGroup>
         </div>

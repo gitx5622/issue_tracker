@@ -14,7 +14,7 @@ import 'tinymce/plugins/paste';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/image';
 import 'tinymce/plugins/table';
-import { history } from "../utils/history";
+
 
 const CreateRepoIssue = () => {
   const [contentEditor, setContentEditor] = React.useState();
@@ -40,8 +40,7 @@ const CreateRepoIssue = () => {
           title: issue.title,
           body: issue.body,
       });
-      history.push("/");
-      window.location.reload();
+      <Redirect to="/created_issues"/>
   };
 
     const handleEditorChange = (content) => {
