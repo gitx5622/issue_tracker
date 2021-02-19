@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardBody, Row } from "shards-react";
 import NavBar from "../components/navbar";
-import axios from 'axios';
 
 const CLIENT_ID = `69e165413c11b10cd90f`;
 const REDIRECT_URI = `http://localhost:3000`;
@@ -15,13 +14,11 @@ class Login extends Component {
     
         console.log(code);
     
-        const githubRes = await axios.post(`https://github.com/login/oauth/access_token?client_id=69e165413c11b10cd90f&client_secret=f3a239632ad3d8156d82317ba3d4c440890cbc15&code=${code}`);
-        console.log(githubRes);
+        // const githubRes = await axios.post(`https://github.com/login/oauth/access_token?client_id=69e165413c11b10cd90f&client_secret=f3a239632ad3d8156d82317ba3d4c440890cbc15&code=${code}`);
+        // console.log(githubRes);
       }
   render() {
     return (
-        <div>
-        <NavBar/>
         <div className="container-fluid">
         <Row>
             <div className="col-md-4 offset-md-4 logincard">
@@ -36,7 +33,6 @@ class Login extends Component {
                 </Card>
                 </div>
         </Row>
-        </div>
         </div>
     );
   }
