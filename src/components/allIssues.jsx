@@ -4,26 +4,81 @@ import { getAllIssues } from '../store/issues/actions/issueActions';
 import { useDispatch, useSelector } from 'react-redux';
 import {CgDanger} from "react-icons/all";
 import { Tag } from 'antd';
+import { getAdvancedRepoLabels, getEshopRepoLabels, getLikeeRepoLabels, getTopratedRepoLabels } from '../store/labels/actions/labelActions';
 
 const AllIssues = () => {
     const issueSelector = useSelector(state => state.Issues);
+    const labelSelector = useSelector(state => state.Labels);
     const allIssues = issueSelector.issues;
+
+    const topratedRepoLabels = labelSelector.topratedrepoLabels;
+    const likeeRepoLabels = labelSelector.likeerepoLabels;
+    const eshopRepoLabels = labelSelector.eshoprepoLabels;
+    const advancedRepoLabels = labelSelector.advancedrepoLabels;
 
     const dispatch = useDispatch();
 
     const listAllIssues = () => dispatch(getAllIssues());
+    const listTopratedRepoLabels = () => dispatch(getTopratedRepoLabels());
+    const listLikeeRepoLabels = () => dispatch(getLikeeRepoLabels());
+    const listEshopRepoLabels = () => dispatch(getEshopRepoLabels());
+    const listAdvancedRepoLabels = () => dispatch(getAdvancedRepoLabels());
 
     const issues = allIssues.map(issue => { return (
     <div>
         <ListGroup>
             <ListGroupItem><CgDanger style={{color:"#f50"}}/>&nbsp;&nbsp; {issue.repository.full_name} &nbsp;&nbsp;<strong style={{fontWeight:"bold"}}>{issue.title}</strong>
-            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano"><a href={`${issue.repository.html_url}/issues`}>{issue.number} {issue.state}</a></Tag></ListGroupItem>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano"><a href={`${issue.repository.html_url}/issues`}>{issue.state}</a></Tag></ListGroupItem>
         </ListGroup>
         </div>
     )})
 
+    const topratedAllRepoLabels = topratedRepoLabels.map(label => { return (
+      <div key={label.id}>
+      <ListGroup>
+          <ListGroupItem>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{label.name}</Tag>
+          </ListGroupItem>
+      </ListGroup>
+      </div>
+    )})
+
+    const likeeAllRepoLabels = likeeRepoLabels.map(label => { return (
+      <div key={label.id}>
+      <ListGroup>
+          <ListGroupItem>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{label.name}</Tag>
+          </ListGroupItem>
+      </ListGroup>
+      </div>
+    )})
+
+    const eshopAllRepoLabels = eshopRepoLabels.map(label => { return (
+      <div key={label.id}>
+      <ListGroup>
+          <ListGroupItem>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{label.name}</Tag>
+          </ListGroupItem>
+      </ListGroup>
+      </div>
+    )})
+
+    const advancedAllRepoLabels = advancedRepoLabels.map(label => { return (
+      <div key={label.id}>
+      <ListGroup>
+          <ListGroupItem>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{label.name}</Tag>
+          </ListGroupItem>
+      </ListGroup>
+      </div>
+    )})
+
     useEffect(()=>{
     listAllIssues();
+    listTopratedRepoLabels();
+    listLikeeRepoLabels();
+    listEshopRepoLabels();
+    listAdvancedRepoLabels();
     },[])
     return ( 
         <div>
@@ -36,7 +91,7 @@ const AllIssues = () => {
                 <NavItem><NavLink href="#">Mentioned</NavLink></NavItem>
             </Nav>
             <Card style={{ maxWidth: "1000px", height:"500px", marginTop:"10px"}}>
-              <CardHeader>All Github issues </CardHeader>
+              <CardHeader>All Github issues <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {allIssues.length}</Tag></CardHeader>
                 <CardBody>
                   <div style={{maxHeight:"400px", overflowY: "scroll"}}>
                   {issues ? issues :
@@ -47,19 +102,13 @@ const AllIssues = () => {
             </Card>
             </Col>
             <Col sm={4}>
-            <h4 style={{marginTop:"30px"}}>Filter Issues</h4>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">filter</span>
-              <input type="text" class="form-control" placeholder="Filter label issues" aria-label="Username" aria-describedby="basic-addon1"/>
+            <h4 style={{marginTop:"30px"}}>All Repo Labels <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {topratedAllRepoLabels.length + likeeAllRepoLabels.length + eshopAllRepoLabels.length + advancedAllRepoLabels.length}</Tag></h4>
+            <div style={{maxHeight:"480px", overflowY: "scroll"}}>
+            {topratedAllRepoLabels}
+            {likeeAllRepoLabels}
+            {eshopAllRepoLabels}
+            {advancedAllRepoLabels}
             </div>
-            <ListGroup>
-              <h4>Issues Tags</h4>
-              <ListGroupItem>#Tag1</ListGroupItem>
-              <ListGroupItem>#Tag2</ListGroupItem>
-              <ListGroupItem>#Tag3</ListGroupItem>
-              <ListGroupItem>#Tag4</ListGroupItem>
-              <ListGroupItem>#Tag5</ListGroupItem>
-            </ListGroup>
             </Col>
           </Row>
         </div>

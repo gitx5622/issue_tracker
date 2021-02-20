@@ -5,8 +5,8 @@ import { getTopratedRepoIssues } from '../store/issues/actions/issueActions';
 import { API_ROUTE, owner, token } from "../utils/constants";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import { Popover, Tag } from 'antd';
+import axios from 'axios';
 
 const TopratedRepoIssues = () => {
     const [query, setQuery] = useState("");
@@ -52,7 +52,7 @@ const TopratedRepoIssues = () => {
           <div key={label.id}>
           <ListGroup>
               <ListGroupItem>
-                <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{label.name}</Tag>
+                <Tag style={{float:"right"}} color="cyan">{label.name}</Tag>
               </ListGroupItem>
           </ListGroup>
           </div>
@@ -60,7 +60,6 @@ const TopratedRepoIssues = () => {
     const content = (
       <div>
         <p>{results.name}</p>
-        <p></p>
       </div>
     );
 
@@ -73,7 +72,7 @@ const TopratedRepoIssues = () => {
           <Row>
             <Col>
               <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-              <CardHeader>Topratedprofessors Github issues<Link to="/create/repo_issue"><Button style={{float:"right"}} theme="success">New Issue</Button><Tag style={{float:"right", marginTop:"12px"}} color="volcano">{repoIssues.length} open</Tag></Link></CardHeader>
+              <CardHeader>Topratedprofessors Github issues<Link to="/create/toprated_repo_issue"><Button style={{float:"right"}} theme="success">New Issue</Button><Tag style={{float:"right", marginTop:"7px"}} color="#f50">{repoIssues.length} open</Tag></Link></CardHeader>
               <CardBody>
                 {repoIssues ? repoIssues :
                 <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should <Link to="/create/repo_issue">create an issue.</Link></p>
@@ -82,7 +81,7 @@ const TopratedRepoIssues = () => {
               </Card>
             </Col>
             <Col sm={4}>
-            <h4 style={{marginTop:"30px"}}>Filter Labels</h4>
+            <h4 style={{marginTop:"30px"}}>Filter Toprated Labels</h4>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">filter</span>
               <input onChange={handleInputChange} type="text" class="form-control" placeholder="Filter label issues"/>

@@ -33,8 +33,10 @@ const NavBar = () => {
         </div>
         <div className='links-container' ref={linksContainerRef}>
           <ul className='links' ref={linksRef}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/">All Issues</a></li>
+            <li><a href="/created_issues">Created Issues</a></li>
+            <li><a href="/toprated_repo_issues">Toprated Issues</a></li>
+            <li><a href="/likee_repo_issues">Likee Issues</a></li>
           </ul>
         </div>
       </div>

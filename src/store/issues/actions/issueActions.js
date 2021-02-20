@@ -7,7 +7,8 @@ import { GET_ISSUES_ERROR, GET_ISSUES_SUCCESS, GET_CREATED_ISSUES_ERROR, GET_CRE
          GET_ADVANCED_REPO_ISSUE_SUCCESS, GET_ADVANCED_REPO_ISSUE_ERROR, CREATE_TOPRATED_ISSUE_SUCCESS,
          CREATE_TOPRATED_ISSUE_ERROR, CREATE_LIKEE_ISSUE_SUCCESS, CREATE_LIKEE_ISSUE_ERROR, 
          CREATE_ESHOP_ISSUE_SUCCESS, CREATE_ESHOP_ISSUE_ERROR, CREATE_ADVANCED_ISSUE_SUCCESS, 
-         CREATE_ADVANCED_ISSUE_ERROR } from "../actionTypes";
+         CREATE_ADVANCED_ISSUE_ERROR, GET_MENTIONED_ISSUES_SUCCESS,GET_MENTIONED_ISSUES_ERROR, 
+         GET_ASSIGNED_ISSUES_SUCCESS, GET_ASSIGNED_ISSUES_ERROR } from "../actionTypes";
 
  
 // get All Repo issues
@@ -15,10 +16,11 @@ export const getAllIssues = () => {
     return async(dispatch) => {
         try {
             const res = await axios.get(`${API_ROUTE}/issues?filter=all`, 
-            { headers: { Authorization: 'token ' + token}});
+            { headers: { Authorization: 'token ' + token}})
             dispatch({type: GET_ISSUES_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_ISSUES_ERROR, payload: err.response.data.error_message})
+            console.log(err);
+            dispatch({type: GET_ISSUES_ERROR, payload: err.Error})
         }
     }
 };
@@ -31,7 +33,7 @@ export const getCreatedIssues = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_CREATED_ISSUES_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_CREATED_ISSUES_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_CREATED_ISSUES_ERROR, payload: err.Error})
         }
     }
 };
@@ -42,9 +44,9 @@ export const getMentionedIssues = () => {
         try {
             const res = await axios.get(`${API_ROUTE}/issues?filter=mentioned`, 
             { headers: { Authorization: 'token ' + token }})
-            dispatch({type: GET_CREATED_ISSUES_SUCCESS, payload: res.data})
+            dispatch({type: GET_MENTIONED_ISSUES_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_CREATED_ISSUES_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_MENTIONED_ISSUES_ERROR, payload: err.Error})
         }
     }
 };
@@ -55,9 +57,9 @@ export const getAssignedIssues = () => {
         try {
             const res = await axios.get(`${API_ROUTE}/issues?filter=assigned`, 
             { headers: { Authorization: 'token ' + token }})
-            dispatch({type: GET_CREATED_ISSUES_SUCCESS, payload: res.data})
+            dispatch({type: GET_ASSIGNED_ISSUES_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_CREATED_ISSUES_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_ASSIGNED_ISSUES_ERROR, payload: err.Error})
         }
     }
 };
@@ -70,7 +72,7 @@ export const getTopratedRepoIssues = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_TOPRATED_REPO_ISSUE_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_TOPRATED_REPO_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_TOPRATED_REPO_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -83,7 +85,7 @@ export const getLikeeRepoIssues = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_LIKEE_REPO_ISSUE_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_LIKEE_REPO_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_LIKEE_REPO_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -96,7 +98,7 @@ export const getEshopRepoIssues = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_ESHOP_REPO_ISSUE_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_ESHOP_REPO_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_ESHOP_REPO_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -109,7 +111,7 @@ export const getAdvancedRepoIssues = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_ADVANCED_REPO_ISSUE_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_ADVANCED_REPO_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_ADVANCED_REPO_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -122,8 +124,9 @@ export const createTopratedRepoIssue = (credentials) => {
             { headers: { Authorization: 'token ' + token}})
             dispatch({type: CREATE_TOPRATED_ISSUE_SUCCESS, payload: res.data})
             history.push('/created_issues');
+            window.location.reload();
         }catch (err) {
-            dispatch({type: CREATE_TOPRATED_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_TOPRATED_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -137,7 +140,7 @@ export const createLikeeRepoIssue = (credentials) => {
             dispatch({type: CREATE_LIKEE_ISSUE_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_LIKEE_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_LIKEE_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -151,7 +154,7 @@ export const createEshopRepoIssue = (credentials) => {
             dispatch({type: CREATE_ESHOP_ISSUE_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_ESHOP_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_ESHOP_ISSUE_ERROR, payload: err.Error})
         }
     }
 };
@@ -165,7 +168,7 @@ export const createAdvancedRepoIssue = (credentials) => {
             dispatch({type: CREATE_ADVANCED_ISSUE_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_ADVANCED_ISSUE_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_ADVANCED_ISSUE_ERROR, payload: err.Error})
         }
     }
 };

@@ -6,8 +6,7 @@ import { CREATE_ADVANCED_LABEL_ERROR, CREATE_ADVANCED_LABEL_SUCCESS, CREATE_ESHO
     CREATE_TOPRATED_LABEL_ERROR, CREATE_TOPRATED_LABEL_SUCCESS, GET_ADVANCED_REPO_LABEL_ERROR, 
     GET_ADVANCED_REPO_LABEL_SUCCESS, GET_ESHOP_REPO_LABEL_ERROR, GET_ESHOP_REPO_LABEL_SUCCESS, 
     GET_LIKEE_REPO_LABEL_ERROR, GET_LIKEE_REPO_LABEL_SUCCESS, GET_TOPRATED_REPO_LABEL_ERROR, 
-    GET_TOPRATED_REPO_LABEL_SUCCESS, FILTER_TOPRATED_REPO_LABEL_NAME_SUCCESS, 
-    FILTER_TOPRATED_REPO_LABEL_NAME_ERROR } from '../actionTypes';
+    GET_TOPRATED_REPO_LABEL_SUCCESS } from '../actionTypes';
 
 
 // get Toprated Repo issues
@@ -18,7 +17,7 @@ export const getTopratedRepoLabels = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_TOPRATED_REPO_LABEL_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_TOPRATED_REPO_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_TOPRATED_REPO_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -31,7 +30,7 @@ export const getLikeeRepoLabels = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_LIKEE_REPO_LABEL_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_LIKEE_REPO_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_LIKEE_REPO_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -45,7 +44,7 @@ export const getEshopRepoLabels = () => {
             console.log(res);
             dispatch({type: GET_ESHOP_REPO_LABEL_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_ESHOP_REPO_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_ESHOP_REPO_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -58,7 +57,7 @@ export const getAdvancedRepoLabels = () => {
             { headers: { Authorization: 'token ' + token }})
             dispatch({type: GET_ADVANCED_REPO_LABEL_SUCCESS, payload: res.data})
         }catch (err) {
-            dispatch({type: GET_ADVANCED_REPO_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: GET_ADVANCED_REPO_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -72,7 +71,7 @@ export const createTopratedRepoLabel = (credentials) => {
             dispatch({type: CREATE_TOPRATED_LABEL_SUCCESS, payload: res.data})
             history.push('/toprated_repo_issues');
         }catch (err) {
-            dispatch({type: CREATE_TOPRATED_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_TOPRATED_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -86,7 +85,7 @@ export const createLikeeRepoLabel = (credentials) => {
             dispatch({type: CREATE_LIKEE_LABEL_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_LIKEE_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_LIKEE_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -100,7 +99,7 @@ export const createEshopRepoLabel = (credentials) => {
             dispatch({type: CREATE_ESHOP_LABEL_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_ESHOP_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_ESHOP_LABEL_ERROR, payload: err.Error})
         }
     }
 };
@@ -114,7 +113,7 @@ export const createAdvancedRepoLabel = (credentials) => {
             dispatch({type: CREATE_ADVANCED_LABEL_SUCCESS, payload: res.data})
             history.push('/created_issues');
         }catch (err) {
-            dispatch({type: CREATE_ADVANCED_LABEL_ERROR, payload: err.response.data.error_message})
+            dispatch({type: CREATE_ADVANCED_LABEL_ERROR, payload: err.Error})
         }
     }
 };

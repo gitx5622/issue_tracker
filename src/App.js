@@ -19,6 +19,8 @@ import TopratedCreateLabels from './components/topratedCreateLabels';
 import LikeeCreateLabel from './components/likeeCreateLabel';
 import EshopCreateLabel from './components/eshopCreateLabel';
 import AdvancedCreateLabel from './components/advancedCreateLabel';
+import Assignedissues from './components/assignedIssues';
+import Mentionedissues from './components/mentionedIssues';
 
 const App = () => {
   return (
@@ -45,6 +47,8 @@ const App = () => {
             <Route path="/create/eshop_repo_issue" component={CreateEshopIssue}/>
             <Route path="/create/likee_repo_issue" component={CreateLikeeIssue}/>
             <Route path="/create/toprated_repo_issue" component={CreateTopratedIssue}/>
+            <Route path="/mentioned_issues" component={Mentionedissues}/>
+            <Route path="/assigned_issues" component={Assignedissues}/>
             <Route path="/created_issues" component={Createdissues}/>
             <Route exact path="/" component={AllIssues}/>
             </div>

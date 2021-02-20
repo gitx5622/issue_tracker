@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { Nav, NavItem, NavLink, Card, CardBody, CardHeader, ListGroup, ListGroupItem} from "shards-react"
 import { useDispatch, useSelector } from 'react-redux';
-import { getCreatedIssues } from '../store/issues/actions/issueActions';
+import { getMentionedIssues } from '../store/issues/actions/issueActions';
 import { Tag } from 'antd';
 
-const Createdissues = () => {
+const Mentionedissues = () => {
     const issueSelector = useSelector(state => state.Issues);
 
-    const allcreatedIssues = issueSelector.createdIssues;
+    const allmentionedIssues = issueSelector.mentionedIssues || [];
 
     const dispatch = useDispatch();
 
-    const listCreatedIssues = () => dispatch(getCreatedIssues());
+    const listMentionedIssues = () => dispatch(getMentionedIssues());
 
-    const createdIssues = allcreatedIssues.map(issue => { return (
+    const mentionedIssues = allmentionedIssues.map(issue => { return (
     <div>
         <ListGroup>
             <ListGroupItem>{issue.repository.full_name} &nbsp;&nbsp;<strong style={{fontWeight:"bold"}}>{issue.title}</strong>
@@ -23,26 +23,24 @@ const Createdissues = () => {
     )})
 
     useEffect(()=>{
-    listCreatedIssues();
+        listMentionedIssues();
     },[])
     return ( 
         <div>
         <Nav tabs>
           <NavItem><NavLink href="#">All</NavLink></NavItem>
-          <NavItem><NavLink active href="#">Created</NavLink></NavItem>
+          <NavItem><NavLink href="#">Created</NavLink></NavItem>
           <NavItem><NavLink href="#">Assigned</NavLink></NavItem>
-          <NavItem><NavLink href="#">Mentioned</NavLink></NavItem>
+          <NavItem><NavLink active href="#">Mentioned</NavLink></NavItem>
         </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-        <CardHeader>Created Github issues <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {allcreatedIssues.length}</Tag></CardHeader>
+        <CardHeader>Mentioned Github issues <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {allmentionedIssues.length}</Tag></CardHeader>
         <CardBody>
-        {createdIssues ? createdIssues :
-        <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>
-        }
+        {mentionedIssues}
         </CardBody>
         </Card>
         </div>
      );
 }
  
-export default Createdissues;
+export default Mentionedissues;
