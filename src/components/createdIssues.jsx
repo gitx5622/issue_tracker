@@ -27,30 +27,20 @@ const Createdissues = () => {
     },[])
     return ( 
         <div>
-             <Nav tabs>
-      <NavItem>
-        <NavLink href="/">
-          All
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink active href="#">Created <Tag style={{borderRadius:"10px"}} color="green">{allcreatedIssues.length}</Tag></NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="/assigned_issues">Assigned</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="/mentioned_issues">Mentioned</NavLink>
-      </NavItem>
-    </Nav>
+        <Nav tabs>
+          <NavItem><NavLink href="#">All</NavLink></NavItem>
+          <NavItem><NavLink active href="#">Created</NavLink></NavItem>
+          <NavItem><NavLink href="#">Assigned</NavLink></NavItem>
+          <NavItem><NavLink href="#">Mentioned</NavLink></NavItem>
+        </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-      <CardHeader>Created Github issues </CardHeader>
-      <CardBody>
+        <CardHeader>Created Github issues </CardHeader>
+        <CardBody>
         {createdIssues ? createdIssues :
         <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>
         }
         </CardBody>
-    </Card>
+        </Card>
         </div>
      );
 }

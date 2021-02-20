@@ -18,7 +18,6 @@ import 'tinymce/plugins/table';
 
 const CreateAdvancedIssue = () => {
   const [contentEditor, setContentEditor] = React.useState();
-  const currentState = useSelector((state) => state.Issues);
 
   const [issue, setIssue] = useState({
       title:'',
@@ -45,11 +44,6 @@ const CreateAdvancedIssue = () => {
     const handleEditorChange = (content) => {
         setContentEditor(content);
     };
-
-
-  if(currentState.isAuthenticated){
-    return <Redirect to='/' />
-  }
 
     return (
       <div style={{marginTop:"10px"}}>

@@ -15,6 +15,10 @@ import { history } from './utils/history';
 import LikeeRepoIssues from './components/getLikeeIssues';
 import EshopRepoIssues from './components/getEshopIssues';
 import AdvancedRepoIssues from './components/getAdvancedIssues';
+import TopratedCreateLabels from './components/topratedCreateLabels';
+import LikeeCreateLabel from './components/likeeCreateLabel';
+import EshopCreateLabel from './components/eshopCreateLabel';
+import AdvancedCreateLabel from './components/advancedCreateLabel';
 
 const App = () => {
   return (
@@ -27,8 +31,12 @@ const App = () => {
             <Col sm={3}>
             <Sidebar/>
             </Col>
-            <Col sm={6}>
+            <Col sm={9}>
             <div style={{marginTop:"10px"}}>
+            <Route path="/create_advanced_repo_label" component={AdvancedCreateLabel}/>
+            <Route path="/create_eshop_repo_label" component={EshopCreateLabel}/>
+            <Route path="/create_likee_repo_label" component={LikeeCreateLabel}/>
+            <Route path="/create_toprated_repo_label" component={TopratedCreateLabels}/>
             <Route path="/advanced_repo_issues" component={AdvancedRepoIssues}/>
             <Route path="/eshop_repo_issues" component={EshopRepoIssues}/>
             <Route path="/likee_repo_issues" component={LikeeRepoIssues}/>
@@ -40,21 +48,6 @@ const App = () => {
             <Route path="/created_issues" component={Createdissues}/>
             <Route exact path="/" component={AllIssues}/>
             </div>
-            </Col>
-            <Col sm={3}>
-            <h4 style={{marginTop:"30px"}}>Filter Issues</h4>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">filter</span>
-              <input type="text" class="form-control" placeholder="Filter label issues" aria-label="Username" aria-describedby="basic-addon1"/>
-            </div>
-            <ListGroup>
-              <h4>Issues Tags</h4>
-              <ListGroupItem>#Tag1</ListGroupItem>
-              <ListGroupItem>#Tag2</ListGroupItem>
-              <ListGroupItem>#Tag3</ListGroupItem>
-              <ListGroupItem>#Tag4</ListGroupItem>
-              <ListGroupItem>#Tag5</ListGroupItem>
-            </ListGroup>
             </Col>
           </Row>
          </div>
