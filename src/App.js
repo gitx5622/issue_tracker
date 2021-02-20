@@ -4,14 +4,8 @@ import CreateTopratedIssue from './components/createTopratedIssue';
 import CreateLikeeIssue from './components/createLikeeIssue';
 import CreateAdvancedIssue from './components/createAdvancedIssue';
 import CreateEshopIssue from './components/createEshopIssue';
-import { ListGroup, ListGroupItem } from "shards-react";
 import Createdissues from './components/createdIssues';
 import TopratedRepoIssues from './components/getTopratedIssues';
-import AllIssues from './components/allIssues';
-import { Row, Col } from "shards-react";
-import NavBar from './components/navbar';
-import Sidebar from './components/sidebar';
-import { history } from './utils/history';
 import LikeeRepoIssues from './components/getLikeeIssues';
 import EshopRepoIssues from './components/getEshopIssues';
 import AdvancedRepoIssues from './components/getAdvancedIssues';
@@ -21,6 +15,12 @@ import EshopCreateLabel from './components/eshopCreateLabel';
 import AdvancedCreateLabel from './components/advancedCreateLabel';
 import Assignedissues from './components/assignedIssues';
 import Mentionedissues from './components/mentionedIssues';
+import AllIssues from './components/allIssues';
+import { Row, Col } from "shards-react";
+import NavBar from './components/navbar';
+import Sidebar from './components/sidebar';
+import { history } from './utils/history';
+import Login from './auth/login';
 
 const App = () => {
   return (
@@ -50,6 +50,7 @@ const App = () => {
             <Route path="/mentioned_issues" component={Mentionedissues}/>
             <Route path="/assigned_issues" component={Assignedissues}/>
             <Route path="/created_issues" component={Createdissues}/>
+            <Route path="/login" component={Login}/>
             <Route exact path="/" component={AllIssues}/>
             </div>
             </Col>

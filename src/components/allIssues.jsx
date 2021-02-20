@@ -1,10 +1,10 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect }  from 'react';import { getAdvancedRepoLabels, getEshopRepoLabels, getLikeeRepoLabels, getTopratedRepoLabels } from '../store/labels/actions/labelActions';
 import { Row, Col, Nav, NavItem, NavLink, Card, CardBody, CardHeader, ListGroup, ListGroupItem} from "shards-react"
 import { getAllIssues } from '../store/issues/actions/issueActions';
 import { useDispatch, useSelector } from 'react-redux';
 import {CgDanger} from "react-icons/all";
 import { Tag } from 'antd';
-import { getAdvancedRepoLabels, getEshopRepoLabels, getLikeeRepoLabels, getTopratedRepoLabels } from '../store/labels/actions/labelActions';
+
 
 const AllIssues = () => {
     const issueSelector = useSelector(state => state.Issues);
@@ -25,7 +25,7 @@ const AllIssues = () => {
     const listAdvancedRepoLabels = () => dispatch(getAdvancedRepoLabels());
 
     const issues = allIssues.map(issue => { return (
-    <div>
+    <div key={issue.id}>
         <ListGroup>
             <ListGroupItem><CgDanger style={{color:"#f50"}}/>&nbsp;&nbsp; {issue.repository.full_name} &nbsp;&nbsp;<strong style={{fontWeight:"bold"}}>{issue.title}</strong>
             <Tag style={{float:"right", borderRadius:"10px"}} color="volcano"><a href={`${issue.repository.html_url}/issues`}>{issue.state}</a></Tag></ListGroupItem>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardBody, Row } from "shards-react";
 import { uri } from "../utils/constants";
+import axios from 'axios';
 
 class Login extends Component {
     async componentDidMount() {
@@ -9,8 +10,8 @@ class Login extends Component {
     
         console.log(code);
     
-        // const githubRes = await axios.post(`https://github.com/login/oauth/access_token?client_id=69e165413c11b10cd90f&client_secret=f3a239632ad3d8156d82317ba3d4c440890cbc15&code=${code}`);
-        // console.log(githubRes);
+        const githubRes = await axios.post(`https://github.com/login/oauth/access_token?client_id=Iv1.484927f49fafccc1&client_secret=ae709ff30946c20f5b9e473b1b8ceb41ed0caa23&code=${code}`);
+        console.log(githubRes);
       }
   render() {
     return (
