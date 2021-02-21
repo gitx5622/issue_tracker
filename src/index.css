@@ -1,7 +1,11 @@
 :root {
   --clr-primary-5: hsl(205, 78%, 60%);
 }
-
+/*
+=============== 
+Globals
+===============
+*/
 ul {
   list-style-type: none;
 }

@@ -8,7 +8,7 @@ pipeline {
         stages {
                 stage('Cloning our Git') {
                     steps {
-                    git 'git@github.com:gitx5622/issue_tracker.git'
+                    git 'https://github.com/gitx5622/issue_tracker.git'
                     }
                 }
                 stage('Building our image') {

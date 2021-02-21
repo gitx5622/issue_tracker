@@ -24,6 +24,14 @@ const AllIssues = () => {
     const listEshopRepoLabels = () => dispatch(getEshopRepoLabels());
     const listAdvancedRepoLabels = () => dispatch(getAdvancedRepoLabels());
 
+    useEffect(()=>{
+      listAllIssues();
+      listTopratedRepoLabels();
+      listLikeeRepoLabels();
+      listEshopRepoLabels();
+      listAdvancedRepoLabels();
+      },[])
+
     const issues = allIssues.map(issue => { return (
     <div key={issue.id}>
         <ListGroup>
@@ -72,14 +80,6 @@ const AllIssues = () => {
       </ListGroup>
       </div>
     )})
-
-    useEffect(()=>{
-    listAllIssues();
-    listTopratedRepoLabels();
-    listLikeeRepoLabels();
-    listEshopRepoLabels();
-    listAdvancedRepoLabels();
-    },[])
     return ( 
         <div>
           <Row>
