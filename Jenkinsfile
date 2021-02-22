@@ -11,6 +11,22 @@ pipeline {
                     git 'https://github.com/gitx5622/issue_tracker.git'
                     }
                 }
+                stage('Testing') {
+                    steps {
+                        sh 'npm test'
+                    }
+                    post{
+                        always{
+                            echo "Running up test"
+                        }
+                        success{
+                            echo "Test paased"
+                        }
+                        failure{
+                            echo "Test failed"
+                        }
+                    }
+                }
                 stage('Building our image') {
                     steps{
                         script {
