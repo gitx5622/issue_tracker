@@ -44,7 +44,7 @@ const CreateTopratedIssue = () => {
     };
 
     return (
-      <div style={{marginTop:"10px"}}>
+      <div className="margintop">
         <h3>Create an Issue</h3>
           <form onSubmit={submitIssue}>
             <div className="form-group">

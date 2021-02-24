@@ -4,6 +4,19 @@
     <list default="true" id="226aef56-d615-4caa-9427-9e0a19193b9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/allIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/actionReducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/actionReducer.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/component.test.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +54,7 @@
       <workItem from="1613978870677" duration="12247000" />
       <workItem from="1614162794079" duration="90000" />
       <workItem from="1614168601855" duration="4479000" />
-      <workItem from="1614182751767" duration="5642000" />
+      <workItem from="1614182751767" duration="11391000" />
     </task>
     <servers />
   </component>

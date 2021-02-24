@@ -28,7 +28,7 @@ const TopratedCreateLabels = () => {
       });
     };
     return (
-      <div style={{marginTop:"10px"}}>
+      <div className="margintop">
         <h3>Create a label for Topratedprofessors</h3>
           <form onSubmit={submitIssue}>
             <div className="form-group">

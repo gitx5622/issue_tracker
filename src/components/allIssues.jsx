@@ -38,14 +38,14 @@ const AllIssues = () => {
             <Nav tabs>
                 <NavItem><NavLink active href="#">All</NavLink></NavItem>
             </Nav>
-            <Card style={{ maxWidth: "1000px", height:"500px", marginTop:"10px"}}>
+            <Card className="allcard">
               <CardHeader>All Github issues
                   <Tag style={{float:"right", marginTop:"7px"}} color="#f50">
                   Total: {allIssues.length}
                   </Tag>
               </CardHeader>
                 <CardBody>
-                  <div style={{maxHeight:"400px", overflowY: "scroll"}}>
+                  <div className="issuescard">
                   {issues ? issues :
                   <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created,
                       they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>

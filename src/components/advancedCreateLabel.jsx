@@ -28,7 +28,7 @@ const AdvancedCreateLabel = () => {
       });
     };
     return (
-      <div style={{marginTop:"10px"}}>
+      <div className="margintop">
         <h3>Create a label for Advanced Repository</h3>
           <form onSubmit={submitIssue}>
             <div className="form-group">
