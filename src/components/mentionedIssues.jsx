@@ -33,9 +33,6 @@ const Mentionedissues = () => {
     return ( 
         <div>
         <Nav tabs>
-          <NavItem><NavLink href="#">All</NavLink></NavItem>
-          <NavItem><NavLink href="#">Created</NavLink></NavItem>
-          <NavItem><NavLink href="#">Assigned</NavLink></NavItem>
           <NavItem><NavLink active href="#">Mentioned</NavLink></NavItem>
         </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>

@@ -33,10 +33,7 @@ const Assignedissues = () => {
     return ( 
         <div>
         <Nav tabs>
-          <NavItem><NavLink href="#">All</NavLink></NavItem>
-          <NavItem><NavLink href="#">Created</NavLink></NavItem>
           <NavItem><NavLink active href="#">Assigned</NavLink></NavItem>
-          <NavItem><NavLink href="#">Mentioned</NavLink></NavItem>
         </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
         <CardHeader>Assigned Github issues
