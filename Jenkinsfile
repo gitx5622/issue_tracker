@@ -30,7 +30,7 @@ pipeline {
 
                 stage ('Running tha Application'){
                     steps{
-                        sh "docker-compose up"
+                        sh "docker run -it --rm -p 5000:80 gits5622/issue_tracker:latest"
                     }
                 }
 
