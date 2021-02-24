@@ -1,9 +1,7 @@
 version: '3'
 services:
   web-prod:
+    image: github_issue_tracker_master_web-prod
     container_name: issue_tracker
-    build:
-      context: .
-      dockerfile: Dockerfile
     ports:
       - '2200:80'
