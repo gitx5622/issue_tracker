@@ -1,5 +1,4 @@
-import {message} from "antd"
-import { BEFORE_STATE, GET_ISSUES_ERROR, GET_ISSUES_SUCCESS,GET_CREATED_ISSUES_SUCCESS, 
+import { BEFORE_STATE, GET_ISSUES_ERROR, GET_ISSUES_SUCCESS,GET_CREATED_ISSUES_SUCCESS,
     GET_CREATED_ISSUES_ERROR, GET_TOPRATED_REPO_ISSUE_SUCCESS, GET_TOPRATED_REPO_ISSUE_ERROR, 
     GET_LIKEE_REPO_ISSUE_SUCCESS, GET_LIKEE_REPO_ISSUE_ERROR, GET_ESHOP_REPO_ISSUE_SUCCESS, 
     GET_ESHOP_REPO_ISSUE_ERROR, GET_ADVANCED_REPO_ISSUE_SUCCESS, GET_ADVANCED_REPO_ISSUE_ERROR, 
@@ -44,8 +43,7 @@ const issueReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                issueError: action.payload,
-                message: message.error('All Issues could not be loaded. Lost connection to the server', 10)
+                issueError: action.payload
             };
         case GET_CREATED_ISSUES_SUCCESS:
             return {
@@ -58,8 +56,7 @@ const issueReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                issueError: action.payload,
-                message: message.error('All Created Issues could not be loaded. Lost connection to the server', 10)
+                issueError: action.payload
             };
         case GET_ASSIGNED_ISSUES_SUCCESS:
             return {
@@ -73,7 +70,6 @@ const issueReducer = (state = initState, action) => {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-                message: message.error('All Assigned could not be loaded. Lost connection to the server', 10)
             };
         case GET_MENTIONED_ISSUES_SUCCESS:
             return {
@@ -86,8 +82,7 @@ const issueReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                issueError: action.payload,
-                message: message.error('All Issues could not be loaded. Lost connection to the server', 10)
+                issueError: action.payload
             };
         case GET_TOPRATED_REPO_ISSUE_SUCCESS:
             return {
@@ -101,7 +96,6 @@ const issueReducer = (state = initState, action) => {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-                message: message.error('Toprated Issues could not be loaded. Lost connection to the server', 10)
             };
         case GET_LIKEE_REPO_ISSUE_SUCCESS:
             return {
@@ -114,8 +108,7 @@ const issueReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                issueError: action.payload,
-                message: message.error('Likee Issues could not be loaded. Lost connection to the server', 10)
+                issueError: action.payload
             };
         case GET_ESHOP_REPO_ISSUE_SUCCESS:
             return {
@@ -129,7 +122,6 @@ const issueReducer = (state = initState, action) => {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-                message: message.error('Eshop Issues could not be loaded. Lost connection to the server', 10)
             };
         case GET_ADVANCED_REPO_ISSUE_SUCCESS:
             return {
@@ -142,8 +134,7 @@ const issueReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                issueError: action.payload,
-                message: message.error('Advanced Issues could not be loaded. Lost connection to the server', 10)
+                issueError: action.payload
             };
         case CREATE_TOPRATED_ISSUE_SUCCESS:
             return {

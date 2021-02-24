@@ -1,5 +1,4 @@
-import {message} from 'antd';
-import { BEFORE_STATE, CREATE_ADVANCED_LABEL_ERROR, CREATE_ADVANCED_LABEL_SUCCESS, CREATE_ESHOP_LABEL_ERROR, 
+import { BEFORE_STATE, CREATE_ADVANCED_LABEL_ERROR, CREATE_ADVANCED_LABEL_SUCCESS, CREATE_ESHOP_LABEL_ERROR,
     CREATE_ESHOP_LABEL_SUCCESS, CREATE_LIKEE_LABEL_ERROR, CREATE_LIKEE_LABEL_SUCCESS, 
     CREATE_TOPRATED_LABEL_ERROR, CREATE_TOPRATED_LABEL_SUCCESS, GET_ADVANCED_REPO_LABEL_ERROR, 
     GET_ADVANCED_REPO_LABEL_SUCCESS, GET_ESHOP_REPO_LABEL_ERROR, GET_ESHOP_REPO_LABEL_SUCCESS,
@@ -37,8 +36,7 @@ const labelReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                labelError: action.payload,
-                message: message.error('Toprated labels could not be loaded. Lost connection to the server', 10)
+                labelError: action.payload
             };
         case GET_LIKEE_REPO_LABEL_SUCCESS:
             return {
@@ -51,8 +49,7 @@ const labelReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                labelError: action.payload,
-                message: message.error('Likee labels could not be loaded. Lost connection to the server', 10)
+                labelError: action.payload
             };
         case GET_ESHOP_REPO_LABEL_SUCCESS:
             return {
@@ -65,8 +62,7 @@ const labelReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                labelError: action.payload,
-                message: message.error('Eshop labels could not be loaded. Lost connection to the server', 10)
+                labelError: action.payload
             };
         case GET_ADVANCED_REPO_LABEL_SUCCESS:
             return {
@@ -80,7 +76,6 @@ const labelReducer = (state = initState, action) => {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
-                message: message.error('Advanced labels could not be loaded. Lost connection to the server', 10)
             };
         case CREATE_TOPRATED_LABEL_SUCCESS:
             return {
