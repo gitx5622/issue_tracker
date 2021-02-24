@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="226aef56-d615-4caa-9427-9e0a19193b9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignedIssues.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createdIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createdIssues.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mentionedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mentionedIssues.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="226aef56-d615-4caa-9427-9e0a19193b9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +38,7 @@
       <workItem from="1613978870677" duration="12247000" />
       <workItem from="1614162794079" duration="90000" />
       <workItem from="1614168601855" duration="4479000" />
-      <workItem from="1614182751767" duration="619000" />
+      <workItem from="1614182751767" duration="1225000" />
     </task>
     <servers />
   </component>

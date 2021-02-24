@@ -2,6 +2,6 @@ version: '3'
 services:
   web-prod:
     image: github_issue_tracker_master_web-prod
-    container_name: issue_tracker
+    container_name: github_issue_tracker
     ports:
-      - '2200:80'
+      - '3000:80'
