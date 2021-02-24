@@ -66,5 +66,5 @@ const TopratedCreateLabels = () => {
             </form>
         </div>
     );
-}
+};
 export default TopratedCreateLabels;

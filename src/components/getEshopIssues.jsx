@@ -17,7 +17,6 @@ const EshopRepoIssues = () => {
     const eshopRepoIssues = issueSelector.eshoprepoIssues || [];
     const eshopRepoLabels = labelSelector.eshoprepoLabels || [];
 
-
     const dispatch = useDispatch();
 
     const listRepoIssues = () => dispatch(getEshopRepoIssues());
@@ -26,11 +25,13 @@ const EshopRepoIssues = () => {
     const repoIssues = eshopRepoIssues.map(issue => { return (
     <div key={issue.id}>
         <ListGroup>
-            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}</strong>{issue.labels.map(label => { return (<Tag color="cyan"> {label.name}</Tag>)})}
-            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{issue.state}</Tag></ListGroupItem>
+            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}
+            </strong>{issue.labels.map(label => { return (<Tag color="cyan"> {label.name}</Tag>)})}
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{issue.state}</Tag>
+            </ListGroupItem>
         </ListGroup>
         </div>
-    )})
+    )});
     const repoLabels = eshopRepoLabels.map(label => { return (
         <div key={label.id}>
         <ListGroup>
@@ -39,7 +40,7 @@ const EshopRepoIssues = () => {
             </ListGroupItem>
         </ListGroup>
         </div>
-    )})
+    )});
 
     const handleInputChange = (e) => {
         setQuery(e.target.value)
@@ -48,7 +49,7 @@ const EshopRepoIssues = () => {
       const filterEshopRepoLabel = async() => {
             try {
                 const res = await axios.get(`${API_ROUTE}/repos/${owner}/likee_frontend/labels/${query}`, 
-                { headers: { Authorization: 'token ' + token}})
+                { headers: { Authorization: 'token ' + token}});
                 setResults(res.data)
             }catch (err) {
                 
@@ -61,31 +62,41 @@ const EshopRepoIssues = () => {
       );
       useEffect(()=>{
         filterEshopRepoLabel();
+          // eslint-disable-next-line react-hooks/exhaustive-deps
       },[query]);
   
 
     useEffect(()=>{
       listRepoIssues();
       listRepoLabels();
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     return ( 
         <div>
             <Row>
                 <Col>
                 <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-                <CardHeader>Eshop Repository Github issues<Link to="/create/eshop_repo_issue"><Button style={{float:"right"}} theme="success">New Issue</Button><Tag style={{float:"right", marginTop:"7px"}} color="#f50">{repoIssues.length} open</Tag></Link></CardHeader>
+                <CardHeader>Eshop Repository Github issues
+                    <Link to="/create/eshop_repo_issue">
+                    <Button style={{float:"right"}} theme="success">New Issue</Button>
+                    <Tag style={{float:"right", marginTop:"7px"}} color="#f50">{repoIssues.length} open</Tag>
+                    </Link>
+                </CardHeader>
                 <CardBody>
                 {repoIssues ? repoIssues :
-                <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should <Link to="/create/repo_issue">create an issue.</Link></p>
+                <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created,
+                    they’ll appear here in a searchable and filterable list. To get started, you should
+                    <Link to="/create/repo_issue">create an issue.</Link>
+                </p>
                 }
                 </CardBody>
                 </Card>
                 </Col>
                 <Col sm={4}>
                 <h4 style={{marginTop:"30px"}}>Filter Eshop Labels</h4>
-                <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">filter</span>
-                <input type="text" onChange={handleInputChange} class="form-control" placeholder="Filter label name"/>
+                <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">filter</span>
+                <input type="text" onChange={handleInputChange} className="form-control" placeholder="Filter label name"/>
                 </div>
                 <div style={{maxHeight:"350px", overflowY: "scroll"}}>
                 <Popover content={content}>
@@ -103,6 +114,6 @@ const EshopRepoIssues = () => {
             </Row>
         </div>
      );
-}
+};
  
 export default EshopRepoIssues;

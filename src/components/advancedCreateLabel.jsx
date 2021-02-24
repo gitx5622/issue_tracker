@@ -66,5 +66,5 @@ const AdvancedCreateLabel = () => {
             </form>
         </div>
     );
-}
+};
 export default AdvancedCreateLabel;

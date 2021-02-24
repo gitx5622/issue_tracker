@@ -13,7 +13,7 @@ export const initState = {
     advancedrepoLabels: [],
     isLoading: false,
     labelError: null,
-}
+};
 
 
 const labelReducer = (state = initState, action) => {
@@ -25,119 +25,119 @@ const labelReducer = (state = initState, action) => {
                 ...state,
                 labelError: null,
                 isLoading: true,
-            }
+            };
         case GET_TOPRATED_REPO_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 topratedrepoLabels: action.payload,
                 labelError: null,
-            }
+            };
         case GET_TOPRATED_REPO_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
                 message: message.error('Toprated labels could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_LIKEE_REPO_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 likeerepoLabels: action.payload,
                 labelError: null,
-            }
+            };
         case GET_LIKEE_REPO_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
                 message: message.error('Likee labels could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_ESHOP_REPO_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 eshoprepoLabels: action.payload,
                 labelError: null,
-            }
+            };
         case GET_ESHOP_REPO_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
                 message: message.error('Eshop labels could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_ADVANCED_REPO_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 advancedrepoLabels: action.payload,
                 labelError: null,
-            }
+            };
         case GET_ADVANCED_REPO_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
                 message: message.error('Advanced labels could not be loaded. Lost connection to the server', 10)
-            }  
+            };
         case CREATE_TOPRATED_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 topratedrepoLabels: [action.payload, ...state.topratedrepoLabels],
                 labelError: null,
-            }
+            };
         case CREATE_TOPRATED_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
 
-            }
+            };
         case CREATE_LIKEE_LABEL_SUCCESS:
         return {
             ...state,
             isLoading: false,
             likeerepoLabels: [action.payload, ...state.likeerepoLabels],
             labelError: null,
-        }
+        };
         case CREATE_LIKEE_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
-            }
+            };
         case CREATE_ESHOP_LABEL_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 eshoprepoLabels: [action.payload, ...state.eshoprepoLabels],
                 labelError: null,
-            }
+            };
         case CREATE_ESHOP_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
-            }
+            };
         case CREATE_ADVANCED_LABEL_SUCCESS:
         return {
             ...state,
             isLoading: false,
             advancedrepoLabels: [action.payload, ...state.advancedrepoLabels],
             labelError: null,
-        }
+        };
         case CREATE_ADVANCED_LABEL_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 labelError: action.payload,
-            }
+            };
         default:
             return state;
     }
-}
+};
 
 export default labelReducer;

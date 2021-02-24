@@ -16,15 +16,20 @@ const Createdissues = () => {
     const createdIssues = allcreatedIssues.map(issue => { return (
     <div>
         <ListGroup>
-            <ListGroupItem>{issue.repository.full_name} &nbsp;&nbsp;<strong style={{fontWeight:"bold"}}>{issue.title}</strong>
-            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano"><a href={`${issue.repository.html_url}/issues`}>{issue.state}</a></Tag></ListGroupItem>
+            <ListGroupItem>{issue.repository.full_name} &nbsp;&nbsp;
+                <strong style={{fontWeight:"bold"}}>{issue.title}</strong>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">
+                <a href={`${issue.repository.html_url}/issues`}>{issue.state}</a>
+            </Tag>
+            </ListGroupItem>
         </ListGroup>
         </div>
-    )})
+    )});
 
     useEffect(()=>{
     listCreatedIssues();
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     return ( 
         <div>
         <Nav tabs>
@@ -34,15 +39,22 @@ const Createdissues = () => {
           <NavItem><NavLink href="#">Mentioned</NavLink></NavItem>
         </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-        <CardHeader>Created Github issues <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {allcreatedIssues.length}</Tag></CardHeader>
+        <CardHeader>Created Github issues
+            <Tag style={{float:"right", marginTop:"7px"}} color="#f50">
+            Total: {allcreatedIssues.length}
+            </Tag>
+        </CardHeader>
         <CardBody>
         {createdIssues ? createdIssues :
-        <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should create an issue.</p>
+        <p>
+            Issues are used to track todos, bugs, feature requests, and more. As issues are created,
+            they’ll appear here in a searchable and filterable list. To get started, you should create an issue.
+        </p>
         }
         </CardBody>
         </Card>
         </div>
      );
-}
+};
  
 export default Createdissues;

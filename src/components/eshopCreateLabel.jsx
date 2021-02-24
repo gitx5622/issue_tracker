@@ -66,5 +66,5 @@ const EshopCreateLabel = () => {
             </form>
         </div>
     );
-}
+};
 export default EshopCreateLabel;

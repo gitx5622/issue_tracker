@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { createTopratedRepoIssue } from "../store/issues/actions/issueActions";
-import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {Row, Col, Button} from 'shards-react';
 import 'tinymce/skins/content/default/content.min.css';
 import 'tinymce/skins/ui/oxide/content.min.css';
@@ -18,8 +17,6 @@ import 'tinymce/plugins/table';
 
 const CreateTopratedIssue = () => {
   const [contentEditor, setContentEditor] = React.useState();
-  const currentState = useSelector((state) => state.Issues);
-
   const [issue, setIssue] = useState({
       title:'',
       body:'',
@@ -45,11 +42,6 @@ const CreateTopratedIssue = () => {
     const handleEditorChange = (content) => {
         setContentEditor(content);
     };
-
-
-  if(currentState.isAuthenticated){
-    return <Redirect to='/' />
-  }
 
     return (
       <div style={{marginTop:"10px"}}>
@@ -100,5 +92,5 @@ const CreateTopratedIssue = () => {
             </form>
         </div>
     );
-}
+};
 export default CreateTopratedIssue;

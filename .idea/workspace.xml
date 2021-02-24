@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="226aef56-d615-4caa-9427-9e0a19193b9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignedIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createdIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createdIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/getAdvancedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/getAdvancedIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/getEshopIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/getEshopIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/getLikeeIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/getLikeeIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/getTopratedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/getTopratedIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mentionedIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mentionedIssues.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/issues/actions/issueActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/actions/issueActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/issues/reducers/issueReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/reducers/issueReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/labels/actions/labelActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/labels/actions/labelActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/labels/reducers/labelReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/labels/reducers/labelReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/authorization.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +58,7 @@
       <updated>1613978866898</updated>
       <workItem from="1613978870677" duration="12247000" />
       <workItem from="1614162794079" duration="90000" />
-      <workItem from="1614168601855" duration="901000" />
+      <workItem from="1614168601855" duration="2015000" />
     </task>
     <servers />
   </component>
@@ -52,7 +70,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/createLikeeIssue.jsx</url>
-          <line>62</line>
+          <line>54</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

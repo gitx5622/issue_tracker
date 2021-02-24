@@ -21,7 +21,7 @@ export const initState = {
     repos: {},
     isLoading: false,
     issueError: null,
-}
+};
 
 const issueReducer = (state = initState, action) => {
     switch(action.type) {
@@ -32,174 +32,174 @@ const issueReducer = (state = initState, action) => {
                 ...state,
                 issueError: null,
                 isLoading: true,
-            }
+            };
         case GET_ISSUES_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 issues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_ISSUES_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('All Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_CREATED_ISSUES_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 createdIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_CREATED_ISSUES_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('All Created Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_ASSIGNED_ISSUES_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 assignedIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_ASSIGNED_ISSUES_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('All Assigned could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_MENTIONED_ISSUES_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 mentionedIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_MENTIONED_ISSUES_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('All Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_TOPRATED_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 topratedrepoIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_TOPRATED_REPO_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('Toprated Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_LIKEE_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 likeerepoIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_LIKEE_REPO_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('Likee Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_ESHOP_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 eshoprepoIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_ESHOP_REPO_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('Eshop Issues could not be loaded. Lost connection to the server', 10)
-            }
+            };
         case GET_ADVANCED_REPO_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 advancedrepoIssues: action.payload,
                 issueError: null,
-            }
+            };
         case GET_ADVANCED_REPO_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
                 message: message.error('Advanced Issues could not be loaded. Lost connection to the server', 10)
-            }  
+            };
         case CREATE_TOPRATED_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 topratedrepoIssues: [action.payload, ...state.topratedrepoIssues],
                 issueError: null,
-            }
+            };
         case CREATE_TOPRATED_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-            }
+            };
         case CREATE_LIKEE_ISSUE_SUCCESS:
         return {
             ...state,
             isLoading: false,
             likeerepoIssues: [action.payload, ...state.likeerepoIssues],
             issueError: null,
-        }
+        };
         case CREATE_LIKEE_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-            }
+            };
         case CREATE_ESHOP_ISSUE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 eshoprepoIssues: [action.payload, ...state.eshoprepoIssues],
                 issueError: null,
-            }
+            };
         case CREATE_ESHOP_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-            }
+            };
         case CREATE_ADVANCED_ISSUE_SUCCESS:
         return {
             ...state,
             isLoading: false,
             advancedrepoIssues: [action.payload, ...state.advancedrepoIssues],
             issueError: null,
-        }
+        };
         case CREATE_ADVANCED_ISSUE_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 issueError: action.payload,
-            }
+            };
         default:
             return state;
     }
-}
+};
 
 export default issueReducer

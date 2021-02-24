@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { createAdvancedRepoIssue } from "../store/issues/actions/issueActions";
-import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {Row, Col, Button} from 'shards-react';
 import 'tinymce/skins/content/default/content.min.css';
 import 'tinymce/skins/ui/oxide/content.min.css';
@@ -94,5 +93,5 @@ const CreateAdvancedIssue = () => {
             </form>
         </div>
     );
-}
+};
 export default CreateAdvancedIssue;

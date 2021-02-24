@@ -66,5 +66,5 @@ const LikeeCreateLabel = () => {
             </form>
         </div>
     );
-}
+};
 export default LikeeCreateLabel;

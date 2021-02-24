@@ -16,15 +16,20 @@ const Mentionedissues = () => {
     const mentionedIssues = allmentionedIssues.map(issue => { return (
     <div>
         <ListGroup>
-            <ListGroupItem>{issue.repository.full_name} &nbsp;&nbsp;<strong style={{fontWeight:"bold"}}>{issue.title}</strong>
-            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano"><a href={`${issue.repository.html_url}/issues`}>{issue.state}</a></Tag></ListGroupItem>
+            <ListGroupItem>{issue.repository.full_name} &nbsp;&nbsp;
+                <strong style={{fontWeight:"bold"}}>{issue.title}</strong>
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">
+                <a href={`${issue.repository.html_url}/issues`}>{issue.state}</a>
+            </Tag>
+            </ListGroupItem>
         </ListGroup>
         </div>
-    )})
+    )});
 
     useEffect(()=>{
         listMentionedIssues();
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     return ( 
         <div>
         <Nav tabs>
@@ -34,13 +39,17 @@ const Mentionedissues = () => {
           <NavItem><NavLink active href="#">Mentioned</NavLink></NavItem>
         </Nav>
         <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-        <CardHeader>Mentioned Github issues <Tag style={{float:"right", marginTop:"7px"}} color="#f50">Total: {allmentionedIssues.length}</Tag></CardHeader>
+        <CardHeader>Mentioned Github issues
+            <Tag style={{float:"right", marginTop:"7px"}} color="#f50">
+            Total: {allmentionedIssues.length}
+            </Tag>
+        </CardHeader>
         <CardBody>
         {mentionedIssues}
         </CardBody>
         </Card>
         </div>
      );
-}
+};
  
 export default Mentionedissues;

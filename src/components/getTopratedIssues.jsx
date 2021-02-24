@@ -29,7 +29,7 @@ const TopratedRepoIssues = () => {
     const filterTopratedRepoLabel = async() => {
           try {
               const res = await axios.get(`${API_ROUTE}/repos/${owner}/topratedprofessors/labels/${query}`, 
-              { headers: { Authorization: 'token ' + token}})
+              { headers: { Authorization: 'token ' + token}});
               setResults(res.data)
           }catch (err) {
               
@@ -38,16 +38,19 @@ const TopratedRepoIssues = () => {
 
     useEffect(()=>{
       filterTopratedRepoLabel();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[query]);
 
     const repoIssues = allRepoIssues.map(issue => { return (
     <   div key={issue.id}>
         <ListGroup>
-            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}</strong>{issue.labels.map(label => { return (<Tag color="cyan"> {label.name}</Tag>)})}
-            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{issue.state}</Tag></ListGroupItem>
+            <ListGroupItem><strong style={{fontWeight:"bold"}}>{issue.title}
+            </strong>{issue.labels.map(label => { return (<Tag color="cyan"> {label.name}</Tag>)})}
+            <Tag style={{float:"right", borderRadius:"10px"}} color="volcano">{issue.state}</Tag>
+            </ListGroupItem>
         </ListGroup>
         </div>
-    )})
+    )});
     const repoLabels = topratedRepoLabels.map(label => { return (
           <div key={label.id}>
           <ListGroup>
@@ -56,7 +59,7 @@ const TopratedRepoIssues = () => {
               </ListGroupItem>
           </ListGroup>
           </div>
-      )})
+      )});
     const content = (
       <div>
         <p>{results.name}</p>
@@ -66,25 +69,34 @@ const TopratedRepoIssues = () => {
     useEffect(()=>{
       listRepoIssues();
       listRepoLabels();
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     return ( 
         <div>
           <Row>
             <Col>
               <Card style={{ maxWidth: "1000px", marginTop:"10px"}}>
-              <CardHeader>Topratedprofessors Github issues<Link to="/create/toprated_repo_issue"><Button style={{float:"right"}} theme="success">New Issue</Button><Tag style={{float:"right", marginTop:"7px"}} color="#f50">{repoIssues.length} open</Tag></Link></CardHeader>
+              <CardHeader>Topratedprofessors Github issues
+                  <Link to="/create/toprated_repo_issue">
+                  <Button style={{float:"right"}} theme="success">New Issue</Button>
+                  <Tag style={{float:"right", marginTop:"7px"}} color="#f50">{repoIssues.length} open</Tag>
+                  </Link>
+              </CardHeader>
               <CardBody>
                 {repoIssues ? repoIssues :
-                <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should <Link to="/create/repo_issue">create an issue.</Link></p>
+                <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created,
+                    they’ll appear here in a searchable and filterable list. To get started, you should
+                    <Link to="/create/repo_issue">create an issue.</Link>
+                </p>
                 }
               </CardBody>
               </Card>
             </Col>
             <Col sm={4}>
             <h4 style={{marginTop:"30px"}}>Filter Toprated Labels</h4>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">filter</span>
-              <input onChange={handleInputChange} type="text" class="form-control" placeholder="Filter label issues"/>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">filter</span>
+              <input onChange={handleInputChange} type="text" className="form-control" placeholder="Filter label issues"/>
             </div>
             <div style={{maxHeight:"350px", overflowY: "scroll"}}>
             <Popover content={content}>
@@ -102,6 +114,6 @@ const TopratedRepoIssues = () => {
             </Row>
         </div>
      );
-}
+};
  
 export default TopratedRepoIssues;
