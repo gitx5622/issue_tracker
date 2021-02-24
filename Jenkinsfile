@@ -30,7 +30,7 @@ pipeline {
 
                 stage ('Running tha Application'){
                     steps{
-                        sh "docker run -p 3000:80 gits5622/issue_tracker:latest"
+                        sh "docker run -p 3000:80 gits5622/issue_tracker:latest -d"
                     }
                 }
 
