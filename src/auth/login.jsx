@@ -24,7 +24,8 @@ class Login extends Component {
                     <center>
                         <a href={uri}>
                         Login with Github
-                        </a></center>
+                        </a>
+                    </center>
                     </CardBody>
                 </Card>
                 </div>

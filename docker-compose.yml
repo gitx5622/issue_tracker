@@ -2,6 +2,6 @@ version: '3'
 services:
   web-prod:
     image: gits5622/issue_tracker:latest
-    container_name: github_issues_tracker
+    container_name: issue_tracker
     ports:
       - '5000:80'

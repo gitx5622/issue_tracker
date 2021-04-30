@@ -3,20 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="226aef56-d615-4caa-9427-9e0a19193b9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/advancedCreateLabel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/allIssues.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/allIssues.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvancedIssue.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createEshopIssue.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createLikeeIssue.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createTopratedIssue.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/eshopCreateLabel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/likeeCreateLabel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topratedCreateLabels.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/actionReducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/actionReducer.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/component.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../topratedprofessors" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,12 +44,23 @@
       <workItem from="1613978870677" duration="12247000" />
       <workItem from="1614162794079" duration="90000" />
       <workItem from="1614168601855" duration="4479000" />
-      <workItem from="1614182751767" duration="11391000" />
+      <workItem from="1614182751767" duration="16397000" />
+      <workItem from="1614255167653" duration="92000" />
+      <workItem from="1614403840935" duration="1588000" />
+      <workItem from="1614765833029" duration="156000" />
+      <workItem from="1614766014046" duration="180000" />
+      <workItem from="1614766221109" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="466" y="121" width="424" height="478" key="FileChooserDialogImpl" timestamp="1614766247213">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="466" y="121" width="424" height="478" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614766247213" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
